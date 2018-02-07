@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="m-js">
         <div class="row" v-for="(v, i) in list" :key="i">
             <h3><a :href="v.url" target="_blank">{{v.name}}</a></h3>
             <iframe :src="v.url" ></iframe>
@@ -42,7 +42,7 @@ export default {
     overflow: hidden;
 }
 
-.row {
+.m-js .row {
     position: relative;
     float: left;
     width: 25%;
@@ -51,28 +51,28 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
-    .row {
+    .m-js .row {
         width: 33%;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .row {
+    .m-js .row {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 640px) {
-    .row {
+    .m-js .row {
         width: 100%;
     }
 }
 
-.row:hover h3 {
+.m-js .row:hover h3 {
     background: #333;
 }
 
-h3 {
+.m-js h3 {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,20 +85,15 @@ h3 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
-a {
+.m-js a {
     color: #fff;
     text-decoration: none;
 }
 
-iframe {
+.m-js iframe {
     width: 100%;
     height: 100%;
     padding-top: 25px;
 }
 
-@media screen and (max-width: 480px) {
-    div {
-        width: 100%;
-    }
-}
 </style>
