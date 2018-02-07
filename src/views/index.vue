@@ -28,6 +28,7 @@ export default {
                 { name: 'flex学习', url: 'https://funyaliga.github.io/flex-playground/dist/' },
                 { name: 'typewrite打字', url: 'https://funyaliga.github.io/typewrite/' },
                 { name: 'redraw重绘', url: 'https://funyaliga.github.io/redrawEl/examples/' },
+                { name: 'gradientColor渐变', url: 'https://funyaliga.github.io/gradientColor/examples/' },
             ]
         };
     },
