@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="row" v-for="(v, i) in list" :key="i">
-            <h3><a :href="`${env === 'production' ? './dist' : ''}${v.url}`" target="_blank">{{v.name}}</a></h3>
-            <iframe :src="`${env === 'production' ? './dist' : ''}${v.url}`" ></iframe>
+            <h3><a :href="v.url" target="_blank">{{v.name}}</a></h3>
+            <iframe :src="v.url" ></iframe>
         </div>
     </div>
 </template>
@@ -14,19 +14,19 @@ export default {
         return {
             env: process && process.env && process.env.NODE_ENV,
             list: [
-                { name: '_array - 数组相关方法', url: '/#/array' },
-                { name: '_obj - 对象相关方法', url: '/#/obj' },
-                { name: '_html', url: '/#/html' },
-                { name: '_str - 字符相关', url: '/#/str' },
-                { name: '_url - url相关', url: '/#/url' },
-                { name: 'curry - 柯里化', url: '/#/curry' },
-                { name: 'format - 格式化', url: '/#/format' },
-                { name: 'color - 颜色', url: '/#/color' },
-                { name: 'check', url: '/#/check' },
-                { name: 'is', url: '/#/is' },
+                { name: '_array - 数组相关方法', url: '#/array' },
+                { name: '_obj - 对象相关方法', url: '#/obj' },
+                { name: '_html', url: '#/html' },
+                { name: '_str - 字符相关', url: '#/str' },
+                { name: '_url - url相关', url: '#/url' },
+                { name: 'curry - 柯里化', url: '#/curry' },
+                { name: 'format - 格式化', url: '#/format' },
+                { name: 'color - 颜色', url: '#/color' },
+                { name: 'check', url: '#/check' },
+                { name: 'is', url: '#/is' },
                 { name: '宽高相关学习', url: 'https://funyaliga.github.io/wh/dist/' },
                 { name: 'flex学习', url: 'https://funyaliga.github.io/flex-playground/dist/' },
-                { name: 'typewrite打字', url: 'https://funyaliga.github.io/typewrite/' },
+                // { name: 'typewrite打字', url: 'https://funyaliga.github.io/typewrite/' },
                 { name: 'redraw重绘', url: 'https://funyaliga.github.io/redrawEl/examples/' },
                 { name: 'gradientColor渐变', url: 'https://funyaliga.github.io/gradientColor/examples/' },
             ]
