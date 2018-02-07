@@ -12,7 +12,7 @@ export default {
     name: "index",
     data () {
         return {
-            env: process && process.env,
+            env: process && process.env && process.env.NODE_ENV,
             list: [
                 { name: '_array - 数组相关方法', url: '/#/array' },
                 { name: '_obj - 对象相关方法', url: '/#/obj' },
