@@ -17,6 +17,14 @@
     </div>
 
     <div class="floor">
+        <h3>reverse反转一个字符</h3>
+        <div class="c">
+           <div class="w">_str.reverse('hello world')</div>
+           <div class="r">{{ reverse('hello world') }}</div>
+        </div>
+    </div>
+
+    <div class="floor">
         <h3>camelize</h3>
         <div class="c">
            <div class="w">_str.camelize('font-size')</div>

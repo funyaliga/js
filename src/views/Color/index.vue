@@ -20,6 +20,23 @@
             <button @click="friendlyUpdate">friendly</button>
         </div>
     </div>
+
+    <div class="floor">
+        <h3>color.rgbToHex() rgb转hex</h3>
+        <div class="c">
+           <div class="w">color.rgbToHex('rgb(50, 50, 50')</div>
+           <div class="r">// {{ rgbToHex('rgb(50, 50, 50') }}</div>
+
+           <div class="w">color.rgbToHex('rgba(50, 50, 50, .5')</div>
+           <div class="r">// {{ rgbToHex('rgba(50, 50, 50, .5') }}</div>
+
+           <div class="w">color.rgbToHex([50, 50, 50, .5])</div>
+           <div class="r">// {{ rgbToHex([50, 50, 50, .5]) }}</div>
+
+           <div class="w">color.rgbToHex(50, 50, 50, .5)</div>
+           <div class="r">// {{ rgbToHex(50, 50, 50, .5) }}</div>
+        </div>
+    </div>
 </div>
 </template>
 <script>

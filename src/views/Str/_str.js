@@ -7,6 +7,11 @@ export function repeat(str, n = 1){
     // return str.repeat(n)
 }
 
+// 反转一个字符串
+export function reverse(str){
+    return [...str].reverse().join('')
+}
+
 // 是否相等
 export function eq (value, other) {
     // NaN 是不与任何值相等的，包括自身
