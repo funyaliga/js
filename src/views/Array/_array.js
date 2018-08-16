@@ -139,7 +139,6 @@ export function sortOn(arr, prop) {
  */
 export function flattenByKey(arr, key) {
     return arr.reduce((a, b) => {
-        console.log(b, key)
         if (Array.isArray(b[key])) {
             // eslint-disable-next-line no-unused-vars
             const { [key]: _, ...noKey } = b;
