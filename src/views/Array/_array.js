@@ -50,7 +50,7 @@ export function different(array1, array2){
 export function series (num, start = 0) {
     // es6
     return Array.from(new Array(num),(val,index) => index + start);
-    // return Array.from(Array(num).keys()) 
+    // return Array.from(Array(num).keys())
 
     // es5
     // return Array.apply(null, {length: num}).map(Function.call, Number);
@@ -73,7 +73,7 @@ export function sortOn(arr, prop) {
     if (!Array.isArray(arr)) {
         return arr
     }
-    
+
     return arr.slice().sort((a, b) => {
         let ret = 0
 
@@ -81,7 +81,7 @@ export function sortOn(arr, prop) {
             let x
 			let y
             let desc
-            
+
             switch (typeof el) {
                 case 'function':
                     x = el(a)
@@ -101,33 +101,51 @@ export function sortOn(arr, prop) {
 
             if (x === y) {
                 ret = 0
-				return false
+                return false
             }
 
             if (y !== 0 && !y) {
-				ret = desc ? 1 : -1
-				return true
-			}
+                ret = desc ? 1 : -1
+                return true
+            }
 
-			if (x !== 0 && !x) {
-				ret = desc ? -1 : 1
-				return true
-			}
+            if (x !== 0 && !x) {
+                ret = desc ? -1 : 1
+                return true
+            }
 
-			if (typeof x === 'string' && typeof y === 'string') {
-				ret = desc ? y.localeCompare(x) : x.localeCompare(y)
-				return ret !== 0
-			}
+            if (typeof x === 'string' && typeof y === 'string') {
+                ret = desc ? y.localeCompare(x) : x.localeCompare(y)
+                return ret !== 0
+            }
 
-			if (desc) {
-				ret = x < y ? 1 : -1
-			} else {
-				ret = x < y ? -1 : 1
-			}
+            if (desc) {
+                ret = x < y ? 1 : -1
+            } else {
+                ret = x < y ? -1 : 1
+            }
 
-			return true
+            return true
         })
 
         return ret
     })
 }
+
+/**
+ * 数组扁平化
+ * @param {array} arr 数组
+ * @param {string} key 根据该key扁平
+ */
+export function flattenByKey(arr, key) {
+    return arr.reduce((a, b) => {
+        console.log(b, key)
+        if (Array.isArray(b[key])) {
+            // eslint-disable-next-line no-unused-vars
+            const { [key]: _, ...noKey } = b;
+            return a.concat(noKey).concat(flattenByKey(b[key], key));
+        } else {
+            return a.concat(b);
+        }
+    }, []);
+};

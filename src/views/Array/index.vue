@@ -25,7 +25,7 @@
            <div class="r">// {{series(5, 2)}}</div>
         </div>
     </div>
-    
+
     <div class="floor">
         <h3>排序sortOn</h3>
         <div class="c">
@@ -49,11 +49,45 @@
            <div class="r">// {{ sortOn([{x: 'b'}, {x: 'a'}, {x: 'c'}], el => el.x) }}</div>
         </div>
     </div>
+
+    <div class="floor">
+        <h3>扁平化</h3>
+        <div class="c">
+            <div class="w">
+                _array.flattenByKey(
+                    [
+                        {
+                            name: '广州',
+                            children: [{ name: '天河区' }, { name: '白云区' }]
+                        },
+                        {
+                            name: '北京',
+                            children: [{ name: '东城区' }, { name: '西城区' }]
+                        },
+                    ]
+                , 'children')
+            </div>
+            <div class="r">// {{ flattenByKey(
+                    [
+                        {
+                            name: '广州',
+                            children: [{ name: '天河区' }, { name: '白云区' }]
+                        },
+                        {
+                            name: '北京',
+                            children: [{ name: '东城区' }, { name: '西城区' }]
+                        },
+                    ]
+                , 'children')
+             }}</div>
+        </div>
+    </div>
 </div>
 
 </template>
 <script>
 import * as _array from './_array';
+console.log(_array)
 export default {
     name: "array",
     data () {
