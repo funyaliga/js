@@ -30,3 +30,16 @@ export function equal (x, y) {
         return x !== x && y !== y;
     }
 }
+
+// 判断是否json
+export function json (str){
+    if(!str) { return false };
+    try {
+        if (typeof JSON.parse(str) === 'object') {
+            return true;
+        } 
+    } catch(e) {
+        console.log(e);
+    }
+    return false;
+}

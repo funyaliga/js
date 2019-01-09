@@ -35,6 +35,24 @@
            <div class="r">// => {{ equal(NaN, NaN) }}</div>
         </div>
     </div>
+
+    <div class="floor">
+        <h3>json 是否json格式</h3>
+        <div class="c">
+           <div class="w">is.json('{"年级":"一年级","班级":"4班","姓名":"王某"}')</div>
+           <div class="r">// => {{ json('{"年级":"一年级","班级":"4班","姓名":"王某"}') }}</div>
+
+           <div class="w">is.json('foo')</div>
+           <div class="r">// => {{ json('foo') }}</div>
+
+           <div class="w">is.json(123)</div>
+           <div class="r">// => {{ json(123) }}</div>
+
+           <div class="w">is.json(true)</div>
+           <div class="r">// => {{ json(true) }}</div>
+
+        </div>
+    </div>
 </div>
 
 </template>
